@@ -35,3 +35,10 @@ class Snake:
     def turn_down(self):
         if int(self.arr[0].heading())==0 or int(self.arr[0].heading())==180: 
             self.arr[0].setheading(270)   
+
+    def reset(self):
+        for seg in self.arr:
+            seg.goto(3000,3000)
+        self.arr.clear()
+        self.add_segment()
+        self.arr[0].goto(0,0)
