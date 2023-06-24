@@ -46,8 +46,10 @@ while snake.play:
     #detech collision with the wall
     if abs(int(snake.arr[0].xcor()))>580 or abs(int(snake.arr[0].ycor()))>580:
         print("collided with the wall")
-        snake.play=False
-        score.game_over()
+        #snake.play=False
+        #score.game_over()
+        score.reset()
+        snake.reset()
 
     #detech collision with the tail
 
@@ -55,8 +57,9 @@ while snake.play:
         if segments==snake.arr[0]:
             pass
         elif segments.distance(snake.arr[0])<10:
-            snake.play=False
-            score.game_over()
+            #snake.play=False
+            score.reset()
+            snake.reset()
             print("collided with its own tail")
 
 #endof snake game
